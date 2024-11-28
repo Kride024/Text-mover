@@ -1,0 +1,58 @@
+<!DOcTYPE html>
+<html>
+    <head>
+        <meta charset ="UTF-8"/>
+        <meta name="viewport" content="width=device-width,initial-scale=1.0"/>
+        <title>Text Float</title> 
+        <style>
+       *{
+        padding:0;
+        margin:0;
+        box-sizing: border-box;
+       }
+       body{
+        height:100vh;
+        display:grid;
+        place-items: center;
+        background-color: #000; 
+    }
+h1{
+    text-align:center;
+    color:#fff;
+    font-size:96px;
+    font-weight: bolder;
+    font-style: normal;
+    position:relative;
+}
+h1::before{
+    position:absolute;
+    top:0;
+    left:0;
+    content:"Subscribe...";
+    color:yellow;
+    /* width changing  */
+    width:50%;
+     overflow: hidden; 
+    /* line ke line border right set karna hoga */
+    border-right: 2px solid yellow;
+    animation: textmoving 2s linear infinite ;
+}
+/* Without it can work amazing because of boundary we considered */
+@keyframes textmoving { 
+    0%{
+        width:0%; 
+    }
+    50%{
+        width:100%;
+    }
+    100%{
+        width:0%;
+    }
+    
+}
+        </style>
+    </head>
+    <body>
+<h1>Subscribe...</h1>
+    </body>
+</html>
